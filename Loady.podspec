@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.platform = :ios
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.0' 
   s.name = "loady"
   s.module_name = "Loady"
   s.summary = "fully customizable loading button with 8 different styles."
