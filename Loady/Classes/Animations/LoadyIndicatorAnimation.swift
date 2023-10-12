@@ -92,7 +92,7 @@ public class LoadyIndicatorAnimation: LoadyAnimation {
             indicator.style = self.options.indicatorViewStyle ? .gray : .white
             #elseif os(tvOS)
             indicator.style = self.options.indicatorViewStyle ? .large : .medium
-            #else
+            #end
         }
         
         indicator.startAnimating()
