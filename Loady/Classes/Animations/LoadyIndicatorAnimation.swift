@@ -16,8 +16,8 @@ public extension LoadyAnimationType {
 
 public typealias IndicatorViewStyle = Bool
 public extension IndicatorViewStyle {
-    static let light = false
-    static let black = true
+    static let light = false // medium in tvos
+    static let black = true // large in tvos
 }
 
 public class LoadyIndicatorAnimation: LoadyAnimation {
@@ -88,7 +88,11 @@ public class LoadyIndicatorAnimation: LoadyAnimation {
         indicator.isUserInteractionEnabled = false
         
         if let indicator = indicator as? UIActivityIndicatorView{
+            #if os(iOS)
             indicator.style = self.options.indicatorViewStyle ? .gray : .white
+            #elseif os(tvOS)
+            indicator.style = self.options.indicatorViewStyle ? .large : .medium
+            #else
         }
         
         indicator.startAnimating()
